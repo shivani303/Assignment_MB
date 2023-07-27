@@ -5,10 +5,10 @@ file2= readline(prompt = "Enter a path to .gmt file : ");
 #### DATA FETCHING FROM gene_info.gz FILE ####  
 zz=gzfile(file1 ,open = "r")
 gene_info= read.csv(zz, check.names = FALSE, sep = "\t")
-View(gene_info)
+#View(gene_info)
 
 gene_info_selected= gene_info[,c(2,3,5)]
-View(gene_info_selected)
+#View(gene_info_selected)
 # top_100= gene_info_selected[1:100,]
 # View(top_100)
 
@@ -36,7 +36,8 @@ for(i in 1:nrow(gene_info_selected)) {
   }
 }
 df= df[-1,]
-View(df)
+print(df)
+print("1st file done")
 
 #### FILE 2 DATA FETCHING AND MATCHING #####
 library(tidyr)
@@ -81,7 +82,9 @@ for(each in 1:nrow(gmt_file)){
   gene_vec= NULL
 }
 gmt_df= gmt_df[-1,]
-View(gmt_df)
+print(gmt_df)
+
+print("TASK COMPLETED & PRINTED ON TERMINAL")
 
 
 
